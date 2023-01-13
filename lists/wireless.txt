@@ -1,0 +1,10 @@
+GPSAnomaly
+BTAnomaly
+6GAnomaly
+5GAnomaly
+4GAnomaly
+3GAnomaly
+2GAnomaly
+WFAnomaly
+RFAnomaly
+NFCAnomaly

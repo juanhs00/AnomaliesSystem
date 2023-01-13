@@ -1,0 +1,5 @@
+Threat, Time, Impact, Correlated
+[System.datamobileattack1, 1673406336.500859, 9, System.mobileanomalies1]
+[System.terrorism1, 1673406332.27052, 10, System.networkisdead1]
+[System.datamobileattack2, 1673406349.603566, 9, System.mobileanomalies2]
+[System.terrorism2, 1673406348.920139, 10, System.networkisdead2]

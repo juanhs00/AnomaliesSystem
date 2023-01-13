@@ -1,0 +1,15 @@
+BulkCriticalDataView
+BulkCriticalDataModify
+LocationChanges
+BulkConnectionOpen
+BulkConecctionLost
+NetworkIsDead
+NetworkIsSaturated
+SeveralCallsFromSameIP
+MultiplePermissionsGiven
+MalwareInSystem
+StrangeBehavior
+BruteForce
+MobileAnomalies
+WaveAnomalies
+WirelessAnomalies

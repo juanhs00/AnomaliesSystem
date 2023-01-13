@@ -1,0 +1,5 @@
+Threat, Time, Impact, Anomaly
+[System.blacklistthreat1, 1673406327.536603, 4, System.v10]
+[System.blacklistthreat2, 1673406334.042149, 5, System.v20]
+[System.blacklistthreat3, 1673406340.01834, 4, System.v30]
+[System.blacklistthreat4, 1673406345.454887, 4, System.v40]
