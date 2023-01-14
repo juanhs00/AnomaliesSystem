@@ -75,7 +75,8 @@ with onto:
 
     #Relaciona clases mediante las propiedades
     CorrelatedAnomaly.is_a.append(isCausedBy.some(Anomaly))
-    Threat.is_a.append(isGeneratedBy.some(Anomaly  or CorrelatedAnomaly))
+    Threat.is_a.append(isGeneratedBy.some(Anomaly))
+    Threat.is_a.append(isGeneratedBy.some(CorrelatedAnomaly))
     Anomaly.is_a.append(generate.some(Threat))
     CorrelatedAnomaly.is_a.append(generate.some(Threat))
     Threat.is_a.append(generate.some(Risk))

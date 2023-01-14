@@ -93,7 +93,7 @@ if validation:
         index = index +1
         count  = count + 1
 
-        print(subtype, type)
+        print(subtype)
         individual = name + ',' + str(severity) + ',' + str(stamp) + ',' + str(whitelist) + ',' + str(blacklist) + ',' + subtype + ',' + type +  ',' + str(processed) +  ',' + str(correlated)
         producer.send('quickstart-events', json.dumps(individual).encode('utf-8'))
 

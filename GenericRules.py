@@ -55,8 +55,8 @@ def TypeRule():
 
     onto.save(file = pathFile, format = "rdfxml")
 
-def BlacklistProcess(validation):
-        if validation:
+def BlacklistProcess():
+        
                 with onto:                    
                         blackAnomaly = list(default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -94,25 +94,24 @@ def BlacklistProcess(validation):
                                         ?a o:isProcessed 0.
                                 BIND(NEWINSTANCEIRI(o:BlacklistThreat) AS ?t)}""")
         
-        onto.save(file = pathFile, format = "rdfxml")
-        
-        with onto:
-                default_world.sparql("""
-                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                        DELETE { ?a o:isProcessed 0.
-                                ?a o:isCorrelated 0.
-                                }
-                        INSERT {
-                                ?a o:isProcessed 1.
-                                ?a o:isCorrelated 1.
-                                }
-                        WHERE { ?a a o:Anomaly
-                                ?a o:isBlacklist 1
-                                ?a o:isProcessed 0.}""")
-                
                 onto.save(file = pathFile, format = "rdfxml")
+                
+                with onto:
+                        default_world.sparql("""
+                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                DELETE { ?a o:isProcessed 0.
+                                        ?a o:isCorrelated 0.
+                                        }
+                                INSERT {
+                                        ?a o:isProcessed 1.
+                                        ?a o:isCorrelated 1.
+                                        }
+                                WHERE { ?a a o:Anomaly
+                                        ?a o:isBlacklist 1
+                                        ?a o:isProcessed 0.}""")
+                        
+                        onto.save(file = pathFile, format = "rdfxml")
 
-        if validation:
                 with onto:
                         blackThreat = list (default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -133,50 +132,49 @@ def BlacklistProcess(validation):
                         file.write(str(blackLog) + os.linesep)
                 file.close()
         
-        with onto:
-                subtype="""
-                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                        INSERT { ?w a o:Threat.
-                                                }
-                                        WHERE  {?w a o:%s.
-                                                ?w o:isProcessed 0}
-                                """ % ('BlacklistThreat')
-                default_world.sparql(subtype)
+                with onto:
+                        subtype="""
+                                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                                INSERT { ?w a o:Threat.
+                                                        }
+                                                WHERE  {?w a o:%s.
+                                                        ?w o:isProcessed 0}
+                                        """ % ('BlacklistThreat')
+                        default_world.sparql(subtype)
 
-        onto.save(file = pathFile, format = "rdfxml")
+                onto.save(file = pathFile, format = "rdfxml")
+                
+                with onto:
+                        default_world.sparql("""
+                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                INSERT {
+                                        ?t o:generate ?r.
+                                        ?r o:isGeneratedBy ?t.
+                                        ?r o:hasRiskValue 0.2.
+                                        ?r o:hasTime ?ti.
+                                        ?r o:isProcessed 0.
+                                        }
+                                WHERE { ?t a o:BlacklistThreat   
+                                        ?t o:hasTime ?ti
+                                        ?t o:hasImpact ?s
+                                        ?t o:isProcessed 0.
+                                BIND(NEWINSTANCEIRI(o:BlacklistRisk) AS ?r)}""")
+
+                onto.save(file = pathFile, format = "rdfxml")
+
+                with onto:
+                        default_world.sparql("""
+                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                DELETE { ?t o:isProcessed 0.
+                                        }
+                                INSERT {
+                                        ?t o:isProcessed 1.
+                                        }
+                                WHERE { ?t a o:BlacklistThreat   
+                                        ?t o:isProcessed 0.}""")
+
+                onto.save(file = pathFile, format = "rdfxml")
         
-        with onto:
-                default_world.sparql("""
-                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                        INSERT {
-                                ?t o:generate ?r.
-                                ?r o:isGeneratedBy ?t.
-                                ?r o:hasRiskValue 0.2.
-                                ?r o:hasTime ?ti.
-                                ?r o:isProcessed 0.
-                                }
-                        WHERE { ?t a o:BlacklistThreat   
-                                ?t o:hasTime ?ti
-                                ?t o:hasImpact ?s
-                                ?t o:isProcessed 0.
-                        BIND(NEWINSTANCEIRI(o:BlacklistRisk) AS ?r)}""")
-
-        onto.save(file = pathFile, format = "rdfxml")
-
-        with onto:
-                default_world.sparql("""
-                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                        DELETE { ?t o:isProcessed 0.
-                                }
-                        INSERT {
-                                ?t o:isProcessed 1.
-                                }
-                        WHERE { ?t a o:BlacklistThreat   
-                                ?t o:isProcessed 0.}""")
-
-        onto.save(file = pathFile, format = "rdfxml")
-        
-        if validation:
                 with onto:
                         blackRisk = list (default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -197,47 +195,46 @@ def BlacklistProcess(validation):
                         file.write(str(blackLog) + os.linesep)
                 file.close()
 
-        with onto:
-                subtype="""
-                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                INSERT { ?w a o:Risk.
-                                        }
-                                WHERE  {?w a o:%s.
-                                        ?w o:isProcessed 0}
-                        """ % ('BlacklistRisk')
-                default_world.sparql(subtype)
+                with onto:
+                        subtype="""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        INSERT { ?w a o:Risk.
+                                                }
+                                        WHERE  {?w a o:%s.
+                                                ?w o:isProcessed 0}
+                                """ % ('BlacklistRisk')
+                        default_world.sparql(subtype)
 
-                default_world.sparql("""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                DELETE { ?r o:isProcessed 0.
-                           }
-                INSERT {
-                        ?r o:isProcessed 1.
-                        }
-                WHERE { ?r a o:BlacklistRisk 
-                        ?r o:isProcessed 0.}""")
-
-        onto.save(file = pathFile, format = "rdfxml")
-
-def WhitelistProcess(validation):
-        with onto:
-                default_world.sparql("""
-                       PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                        DELETE { ?a o:isProcessed 0.
-                                 ?a o:isCorrelated 0.  }
-                        INSERT { ?a o:isCorrelated 1.
-                                 ?a o:isProcessed 1.
+                        default_world.sparql("""
+                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                        DELETE { ?r o:isProcessed 0.
                                 }
-                        WHERE {
-                                ?a a o:Anomaly
-                                ?a o:isWhitelist 1
-                                ?a o:isProcessed 0.
-                               }
-                """)
-         
-        onto.save(file = pathFile, format = "rdfxml")
+                        INSERT {
+                                ?r o:isProcessed 1.
+                                }
+                        WHERE { ?r a o:BlacklistRisk 
+                                ?r o:isProcessed 0.}""")
 
-        if validation:
+                onto.save(file = pathFile, format = "rdfxml")
+
+def WhitelistProcess():
+                with onto:
+                        default_world.sparql("""
+                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                DELETE { ?a o:isProcessed 0.
+                                        ?a o:isCorrelated 0.  }
+                                INSERT { ?a o:isCorrelated 1.
+                                        ?a o:isProcessed 1.
+                                        }
+                                WHERE {
+                                        ?a a o:Anomaly
+                                        ?a o:isWhitelist 1
+                                        ?a o:isProcessed 0.
+                                }
+                        """)
+                
+                onto.save(file = pathFile, format = "rdfxml")
+
                 with onto:
                         whiteAnomaly = list(default_world.sparql("""
                         PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -258,85 +255,93 @@ def WhitelistProcess(validation):
                 file.close()
          
 
-def AnomaliesToCorrelatedRule(anomalyTypes, correlatedType, correlatedSeverity,forgetTime, correlatableAnomalies, validation):
- 
-        now = datetime.now()
-        stamp =  datetime.timestamp(now)
-        forgetStamp = stamp - forgetTime
-        unionMatrix ="""{?a a o:%s.}""" % (anomalyTypes[0])
-        index = 0                       
-        for key in anomalyTypes:
-                if index != 0:
-                        unionMatrix = unionMatrix + """ UNION {?a a o:%s.}""" % (anomalyTypes[index])
-                index = index + 1
+def AnomaliesToCorrelatedRule(anomalyTypes, correlatedType):
+                forgetTime = 600
+                correlatableAnomalies = 5
+                correlatedSeverity = 5
+                for key in correlatedAnomalies:
+                        if key[0]==correlatedType:
+                                correlatedSeverity = int(key[1])
+                                forgetTime = int(key[2])
+                                correlatableAnomalies = int(key[3])
 
-        with onto:
-                correlatable = list(default_world.sparql("""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                SELECT ?ti
-                WHERE{ ?a o:isCorrelated 0
-                %s
-                ?a o:hasTime ?ti.
-                FILTER (?ti > %f)}
-                """ % (unionMatrix,forgetStamp)))
+                now = datetime.now()
+                stamp =  datetime.timestamp(now)
+                forgetStamp = stamp - forgetTime
+                unionMatrix ="""{?a a o:%s.}""" % (anomalyTypes[0])
+                index = 0                       
+                for key in anomalyTypes:
+                        if index != 0:
+                                unionMatrix = unionMatrix + """ UNION {?a a o:%s.}""" % (anomalyTypes[index])
+                        index = index + 1
 
-        if len(correlatable) >= correlatableAnomalies:
-                hasTime = 0
-                startTime = correlatable[0][0]
-                for key in correlatable:
-                        if key[0] > hasTime:
-                                hasTime = key[0]
-                        if key[0] < startTime:
-                                startTime = key[0]
-        
                 with onto:
-                        default_world.sparql("""
+                        correlatable = list(default_world.sparql("""
                         PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                        INSERT {
-                                ?c o:isCausedBy ?a.
-                                ?c o:hasSeverity %d.
-                                ?c o:hasTime %f.
-                                }
-                        WHERE { ?a o:isCorrelated 0
-                                %s
-                                ?a o:hasTime %f.
-                        BIND(NEWINSTANCEIRI(o:%s) AS ?c)}
-                        """ % (correlatedSeverity,hasTime,unionMatrix,hasTime,correlatedType))
+                        SELECT ?ti
+                        WHERE{ ?a o:isCorrelated 0
+                        %s
+                        ?a o:hasTime ?ti.
+                        FILTER (?ti > %f)}
+                        """ % (unionMatrix,forgetStamp)))
 
-                onto.save(file = pathFile, format = "rdfxml")
-
-                with onto:
-                        default_world.sparql("""
+                if len(correlatable) >= correlatableAnomalies:
+                        hasTime = 0
+                        startTime = correlatable[0][0]
+                        for key in correlatable:
+                                if key[0] > hasTime:
+                                        hasTime = key[0]
+                                if key[0] < startTime:
+                                        startTime = key[0]
+                
+                        with onto:
+                                default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                INSERT { ?c o:isCausedBy ?a.
-                                        ?c o:startTime %f.
-                                        ?c o:isProcessed 0.
+                                INSERT {
+                                        ?c o:isCausedBy ?a.
+                                        ?c o:hasSeverity %d.
+                                        ?c o:hasTime %f.
                                         }
-                                WHERE {
-                                        ?c a o:%s
-                                        ?c o:hasTime %f
-                                        ?a o:isCorrelated 0
+                                WHERE { ?a o:isCorrelated 0
                                         %s
-                                        ?a o:hasTime ?ti.
-                                        FILTER (?ti > %f)}
-                        """ % (startTime,correlatedType,hasTime,unionMatrix,forgetStamp))
+                                        ?a o:hasTime %f.
+                                BIND(NEWINSTANCEIRI(o:%s) AS ?c)}
+                                """ % (correlatedSeverity,hasTime,unionMatrix,hasTime,correlatedType))
 
-                onto.save(file = pathFile, format = "rdfxml")
+                        onto.save(file = pathFile, format = "rdfxml")
 
-                with onto:
-                        default_world.sparql("""
-                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                DELETE { ?a o:isCorrelated 0}
-                                INSERT { ?a o:isCorrelated 1.
+                        with onto:
+                                default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        INSERT { ?c o:isCausedBy ?a.
+                                                ?c o:startTime %f.
+                                                ?c o:isProcessed 0.
+                                                }
+                                        WHERE {
+                                                ?c a o:%s
+                                                ?c o:hasTime %f
+                                                ?a o:isCorrelated 0
+                                                %s
+                                                ?a o:hasTime ?ti.
+                                                FILTER (?ti > %f)}
+                                """ % (startTime,correlatedType,hasTime,unionMatrix,forgetStamp))
+
+                        onto.save(file = pathFile, format = "rdfxml")
+
+                        with onto:
+                                default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        DELETE { ?a o:isCorrelated 0}
+                                        INSERT { ?a o:isCorrelated 1.
+                                                }
+                                        WHERE {
+                                                %s
                                         }
-                                WHERE {
-                                        %s
-                                }
-                        """ % (unionMatrix))
+                                """ % (unionMatrix))
 
-                onto.save(file = pathFile, format = "rdfxml")
+                        onto.save(file = pathFile, format = "rdfxml")
 
-                if validation:
+                
                         with onto:
                                 correlatedProcess = list(default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -359,53 +364,73 @@ def AnomaliesToCorrelatedRule(anomalyTypes, correlatedType, correlatedSeverity,f
                                 file.write(str(correlatedLog) + os.linesep)
                         file.close()
 
-                subtype="""
-                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                INSERT { ?w a o:CorrelatedAnomaly.
+                        subtype="""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        INSERT { ?w a o:CorrelatedAnomaly.
+                                                }
+                                        WHERE  {?w a o:%s.
+                                                ?w o:isProcessed 0}
+                                """ % (correlatedType)
+                        with onto:
+                                default_world.sparql(subtype)
+
+                        onto.save(file = pathFile, format = "rdfxml")
+
+def AnomalyToThreatRule(anomalyType,threatType):
+                threatProbability = 20
+                threatImpact = 5
+                for key in threats:
+                        if key[0]==threatType:
+                                threatProbability = int(key[1])
+                                threatImpact = int(key[2])
+
+                with onto: 
+                        impactProcess = list(default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        SELECT  ?ti ?s  
+                                        WHERE{  ?a a o:%s.
+                                                ?a o:isProcessed 0.
+                                                ?a o:hasSeverity ?s.
+                                                ?a o:hasTime ?ti
                                         }
-                                WHERE  {?w a o:%s.
-                                        ?w o:isProcessed 0}
-                        """ % (correlatedType)
+                                        """ % (anomalyType)))
+                                
+                for key in impactProcess:
+                        realImpact=int(float(key[1])/10*float(threatImpact))
+                        with onto:
+                                default_world.sparql("""
+                                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                                        INSERT {
+                                                                ?a o:generate ?t.
+                                                                ?t o:isGeneratedBy ?a.
+                                                                ?t o:hasImpact %d.
+                                                                ?t o:hasTime %f.
+                                                                ?t o:hasProbability %d.
+                                                                ?t o:isProcessed 0.
+                                                                }
+                                                        WHERE  {
+                                                                ?a a o:%s.
+                                                                ?a o:isProcessed 0.
+                                                                ?a o:hasTime %f.
+                                                                ?a o:hasSeverity ?s.
+                                                        BIND(NEWINSTANCEIRI(o:%s) AS ?t)}
+                                                        """ % (realImpact,key[0],threatProbability,anomalyType,key[0],threatType))
+
+                onto.save(file = pathFile, format = "rdfxml")
+
+                subtype="""
+                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                        INSERT { ?w a o:Threat.
+                                }
+                        WHERE  {?w a o:%s.
+                                ?w o:isProcessed 0}
+                """ % (threatType)
+
                 with onto:
                         default_world.sparql(subtype)
 
                 onto.save(file = pathFile, format = "rdfxml")
 
-def AnomalyToThreatRule(anomalyType,threatType,threatProbability, validation):
-        with onto:
-                default_world.sparql("""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                INSERT {
-                        ?a o:generate ?t.
-                        ?t o:isGeneratedBy ?a.
-                        ?t o:hasImpact ?v.
-                        ?t o:hasTime ?ti.
-                        ?t o:hasProbability %d.
-                        ?t o:isProcessed 0.
-                        }
-                WHERE  {?a a o:%s.
-                        ?a o:hasSeverity ?v.
-                        ?a o:hasTime ?ti.
-                        ?a o:isProcessed 0.
-                BIND(NEWINSTANCEIRI(o:%s) AS ?t)}
-                """ % (threatProbability,anomalyType,threatType))
-
-        onto.save(file = pathFile, format = "rdfxml")
-
-        subtype="""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                INSERT { ?w a o:Threat.
-                        }
-                WHERE  {?w a o:%s.
-                        ?w o:isProcessed 0}
-            """ % (threatType)
-
-        with onto:
-                default_world.sparql(subtype)
-
-        onto.save(file = pathFile, format = "rdfxml")
-
-        if validation:
                 with onto:
                         threatProcess=list(default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -425,53 +450,73 @@ def AnomalyToThreatRule(anomalyType,threatType,threatProbability, validation):
                         file.write(str(threatLog) + os.linesep)
                 file.close()
 
-        with onto:
-                default_world.sparql("""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                DELETE { ?a o:isProcessed 0}
-                INSERT {
-                        ?a o:isProcessed 1.
-                        }
-                WHERE  {?a a o:%s.
-                        ?a o:isProcessed 0.}
-                """ % (anomalyType))
+                with onto:
+                        default_world.sparql("""
+                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                        DELETE { ?a o:isProcessed 0}
+                        INSERT {
+                                ?a o:isProcessed 1.
+                                }
+                        WHERE  {?a a o:%s.
+                                ?a o:isProcessed 0.}
+                        """ % (anomalyType))
 
-        onto.save(file = pathFile, format = "rdfxml")
-def CorrelatedToThreatRule(correlatedType,threatType,threatProbability, validation):
-        with onto:
-                default_world.sparql("""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                INSERT {
-                        ?c o:generate ?t.
-                        ?t o:isGeneratedBy ?c.
-                        ?t o:hasImpact ?v.
-                        ?t o:hasTime ?ti.
-                        ?t o:hasProbability %d.
-                        ?t o:isProcessed 0.
-                        }
-                WHERE  {?c a o:%s.
-                        ?c o:hasSeverity ?v
-                        ?c o:hasTime ?ti.
-                        ?c o:isProcessed 0
-                BIND(NEWINSTANCEIRI(o:%s) AS ?t)}
-                """ % (threatProbability,correlatedType,threatType))
+                onto.save(file = pathFile, format = "rdfxml")
 
-        onto.save(file = pathFile, format = "rdfxml")
+def CorrelatedToThreatRule(correlatedType,threatType):
+                threatProbability = 20
+                threatImpact = 5
+                for key in threats:
+                        if key[0]==threatType:
+                                threatProbability = int(key[1])
+                                threatImpact = int(key[2])
+                with onto: 
+                        impactProcess = list(default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        SELECT  ?ti ?s  
+                                        WHERE{  ?c a o:%s.
+                                                ?c o:isProcessed 0.
+                                                ?c o:hasSeverity ?s.
+                                                ?c o:hasTime ?ti
+                                        }
+                                        """ % (correlatedType)))
+                                
+                for key in impactProcess:
+                        realImpact=int(float(key[1])/10*float(threatImpact))
+                        with onto:
+                                default_world.sparql("""
+                                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                                        INSERT {
+                                                                ?c o:generate ?t.
+                                                                ?t o:isGeneratedBy ?c.
+                                                                ?t o:hasImpact %d.
+                                                                ?t o:hasTime %f.
+                                                                ?t o:hasProbability %d.
+                                                                ?t o:isProcessed 0.
+                                                                }
+                                                        WHERE  {
+                                                                ?c a o:%s.
+                                                                ?c o:isProcessed 0.
+                                                                ?c o:hasTime %f.
+                                                                ?c o:hasSeverity ?s.
+                                                        BIND(NEWINSTANCEIRI(o:%s) AS ?t)}
+                                                        """ % (realImpact,key[0],threatProbability,correlatedType,key[0],threatType))
 
-        subtype="""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                INSERT { ?w a o:Threat.
-                        }
-                WHERE  {?w a o:%s.
-                        ?w o:isProcessed 0}
-            """ % (threatType)
+                onto.save(file = pathFile, format = "rdfxml")
 
-        with onto:
-                default_world.sparql(subtype)
+                subtype="""
+                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                        INSERT { ?w a o:Threat.
+                                }
+                        WHERE  {?w a o:%s.
+                                ?w o:isProcessed 0}
+                """ % (threatType)
 
-        onto.save(file = pathFile, format = "rdfxml")
+                with onto:
+                        default_world.sparql(subtype)
 
-        if validation:
+                onto.save(file = pathFile, format = "rdfxml")
+
                 with onto:
                         threatProcess=list(default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -492,53 +537,52 @@ def CorrelatedToThreatRule(correlatedType,threatType,threatProbability, validati
                         file.write(str(threatLog) + os.linesep)
                 file.close()
 
-        with onto:
-                default_world.sparql("""
-                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                DELETE { ?c o:isProcessed 0}
-                INSERT {
-                        ?c o:isProcessed 1.
-                        }
-                WHERE  {?c a o:%s.
-                        ?c o:isProcessed 0}
-                """ % (correlatedType))
-
-        onto.save(file = pathFile, format = "rdfxml")
-
-def ThreatToRiskRule(threatType,riskType,validation):
-        with onto: 
-                valueProcess = list(default_world.sparql("""
-                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                SELECT ?ti ((?p * ?i * .001) AS ?value)   
-                                WHERE{  ?t a o:%s.
-                                        ?t o:isProcessed 0.
-                                        ?t o:hasProbability ?p.
-                                        ?t o:hasImpact ?i.
-                                        ?t o:hasTime ?ti
-                                }
-                                """ % (threatType)))
-                        
-        for key in valueProcess:
                 with onto:
                         default_world.sparql("""
-                                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                                INSERT {
-                                                        ?t o:generate ?r.
-                                                        ?r o:isGeneratedBy ?t.
-                                                        ?r o:hasTime %f.
-                                                        ?r o:hasRiskValue %f.
-                                                        ?r o:isProcessed 0.
-                                                        }
-                                                WHERE  {
-                                                        ?t a o:%s.
-                                                        ?t o:isProcessed 0.
-                                                        ?t o:hasTime %f.
-                                                BIND(NEWINSTANCEIRI(o:%s) AS ?r)}
-                                                """ % (key[0],key[1],threatType,key[0],riskType))
+                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                        DELETE { ?c o:isProcessed 0}
+                        INSERT {
+                                ?c o:isProcessed 1.
+                                }
+                        WHERE  {?c a o:%s.
+                                ?c o:isProcessed 0}
+                        """ % (correlatedType))
 
-        onto.save(file = pathFile, format = "rdfxml")
+                onto.save(file = pathFile, format = "rdfxml")
 
-        if validation:
+def ThreatToRiskRule(threatType,riskType):
+                with onto: 
+                        valueProcess = list(default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        SELECT ?ti ((?p * ?i * .001) AS ?value)   
+                                        WHERE{  ?t a o:%s.
+                                                ?t o:isProcessed 0.
+                                                ?t o:hasProbability ?p.
+                                                ?t o:hasImpact ?i.
+                                                ?t o:hasTime ?ti
+                                        }
+                                        """ % (threatType)))
+                                
+                for key in valueProcess:
+                        with onto:
+                                default_world.sparql("""
+                                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                                        INSERT {
+                                                                ?t o:generate ?r.
+                                                                ?r o:isGeneratedBy ?t.
+                                                                ?r o:hasTime %f.
+                                                                ?r o:hasRiskValue %f.
+                                                                ?r o:isProcessed 0.
+                                                                }
+                                                        WHERE  {
+                                                                ?t a o:%s.
+                                                                ?t o:isProcessed 0.
+                                                                ?t o:hasTime %f.
+                                                        BIND(NEWINSTANCEIRI(o:%s) AS ?r)}
+                                                        """ % (key[0],key[1],threatType,key[0],riskType))
+
+                onto.save(file = pathFile, format = "rdfxml")
+
                 with onto:
                         riskProcess=list(default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -559,41 +603,41 @@ def ThreatToRiskRule(threatType,riskType,validation):
                         file.write(str(riskLog) + os.linesep)
                 file.close()
 
-        with onto:
-                default_world.sparql("""
-                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                DELETE {?t o:isProcessed 0.}
-                                                INSERT {
-                                                        ?t o:isProcessed 1.
-                                                        }  
-                                WHERE{  ?t a o:%s.
-                                        ?t o:isProcessed 0.
-                                }
-                                """ % (threatType))
-        
-        subtype="""
-                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                INSERT { ?w a o:Risk.
+                with onto:
+                        default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        DELETE {?t o:isProcessed 0.}
+                                                        INSERT {
+                                                                ?t o:isProcessed 1.
+                                                                }  
+                                        WHERE{  ?t a o:%s.
+                                                ?t o:isProcessed 0.
                                         }
-                                WHERE  {?w a o:%s.
-                                        ?w o:isProcessed 0}
-                        """ % (riskType)
+                                        """ % (threatType))
+                
+                subtype="""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        INSERT { ?w a o:Risk.
+                                                }
+                                        WHERE  {?w a o:%s.
+                                                ?w o:isProcessed 0}
+                                """ % (riskType)
 
-        with onto:
-                default_world.sparql(subtype)
+                with onto:
+                        default_world.sparql(subtype)
 
-        onto.save(file = pathFile, format = "rdfxml")
+                onto.save(file = pathFile, format = "rdfxml")
         
-        with onto:
-                default_world.sparql("""
-                                PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
-                                DELETE {?r o:isProcessed 0.}
-                                                INSERT {
-                                                        ?r o:isProcessed 1.
-                                                        }  
-                                WHERE{  ?r a o:%s.
-                                        ?r o:isProcessed 0.
-                                }
-                                """ % (riskType))
-        
-        onto.save(file = pathFile, format = "rdfxml")
+                with onto:
+                        default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        DELETE {?r o:isProcessed 0.}
+                                                        INSERT {
+                                                                ?r o:isProcessed 1.
+                                                                }  
+                                        WHERE{  ?r a o:%s.
+                                                ?r o:isProcessed 0.
+                                        }
+                                        """ % (riskType))
+                
+                onto.save(file = pathFile, format = "rdfxml")
