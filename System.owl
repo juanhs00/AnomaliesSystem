@@ -749,6 +749,10 @@
   <rdfs:subClassOf rdf:resource="#Wired"/>
 </owl:Class>
 
+<owl:Class rdf:about="#LowTraffic">
+  <rdfs:subClassOf rdf:resource="#Wired"/>
+</owl:Class>
+
 <owl:Class rdf:about="#SaturatedTraffic">
   <rdfs:subClassOf rdf:resource="#Wired"/>
 </owl:Class>
@@ -774,6 +778,14 @@
 </owl:Class>
 
 <owl:Class rdf:about="#BotnetIPRecognized">
+  <rdfs:subClassOf rdf:resource="#Wired"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IPRangeFromNorthKorea">
+  <rdfs:subClassOf rdf:resource="#Wired"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IPSecTraffic">
   <rdfs:subClassOf rdf:resource="#Wired"/>
 </owl:Class>
 
@@ -819,15 +831,15 @@
 
 <Wired rdf:about="#v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities1"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738165.175025</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805103.364593</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -837,7 +849,7 @@
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738165.830741</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805104.342543</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -848,57 +860,57 @@
 
 <Wireless rdf:about="#v3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738166.14265</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805104.842618</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738167.078274</hasTime>
+  <rdf:type rdf:resource="#4GAnomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805105.06806</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v5">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#3GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738167.144013</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805105.620922</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wired rdf:about="#v6">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities2"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738167.676158</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805106.119725</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -907,8 +919,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738167.894972</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805106.390932</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -919,57 +931,57 @@
 
 <Wireless rdf:about="#v8">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738168.201359</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805107.354492</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v9">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738168.436462</hasTime>
+  <rdf:type rdf:resource="#4GAnomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805108.351481</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
-<Wireless rdf:about="#v10">
+<Wired rdf:about="#v10">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <rdf:type rdf:resource="#3GAnomaly"/>
+  <rdf:type rdf:resource="#BotnetIPRecognized"/>
   <generate rdf:resource="#blacklistthreat1"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738168.718977</hasTime>
-  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805109.180409</hasTime>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BotnetIPRecognized</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
-</Wireless>
+</Wired>
 
 <Wired rdf:about="#v11">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
+  <rdf:type rdf:resource="#DataDownloaded"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738169.104169</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805109.190226</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
-  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DataDownloaded</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -979,7 +991,7 @@
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738169.470607</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805110.000624</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -990,57 +1002,57 @@
 
 <Wireless rdf:about="#v13">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738170.04291</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805110.119974</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v14">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738170.148894</hasTime>
+  <rdf:type rdf:resource="#4GAnomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805110.749602</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v15">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#3GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.03695</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805110.891929</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wired rdf:about="#v16">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities3"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.061585</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.076647</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -1049,8 +1061,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.784869</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.257819</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -1061,100 +1073,100 @@
 
 <Wireless rdf:about="#v18">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738172.636499</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.980719</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v19">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#4GAnomaly"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738172.989472</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805112.146968</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
-<Wireless rdf:about="#v20">
+<Wired rdf:about="#v20">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <rdf:type rdf:resource="#3GAnomaly"/>
+  <rdf:type rdf:resource="#BotnetIPRecognized"/>
   <generate rdf:resource="#blacklistthreat2"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738173.090394</hasTime>
-  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805112.89176</hasTime>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BotnetIPRecognized</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
-</Wireless>
+</Wired>
 
 <Wired rdf:about="#v21">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities4"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738173.409676</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805113.876449</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
 
 <Wired rdf:about="#v22">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#DataDownloaded"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738174.232524</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805113.932735</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
-  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DataDownloaded</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
+  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
 
 <Wireless rdf:about="#v23">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738174.560037</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805114.676279</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v24">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738174.804345</hasTime>
+  <rdf:type rdf:resource="#4GAnomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805114.68271</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
@@ -1164,9 +1176,9 @@
   <isGeneratedBy rdf:resource="#v10"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#blacklistrisk1"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasImpact>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasImpact>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738168.718977</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805109.180409</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistThreat>
 
@@ -1175,9 +1187,9 @@
   <isGeneratedBy rdf:resource="#v20"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#blacklistrisk2"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasImpact>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasImpact>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738173.090394</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805112.89176</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistThreat>
 
@@ -1186,7 +1198,7 @@
   <isGeneratedBy rdf:resource="#blacklistthreat1"/>
   <rdf:type rdf:resource="#Risk"/>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</hasRiskValue>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738168.718977</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805109.180409</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistRisk>
 
@@ -1195,43 +1207,43 @@
   <isGeneratedBy rdf:resource="#blacklistthreat2"/>
   <rdf:type rdf:resource="#Risk"/>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</hasRiskValue>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738173.090394</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805112.89176</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistRisk>
 
 <MobileAnomalies rdf:about="#mobileanomalies1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isCausedBy rdf:resource="#v24"/>
-  <isCausedBy rdf:resource="#v13"/>
-  <isCausedBy rdf:resource="#v19"/>
-  <isCausedBy rdf:resource="#v3"/>
   <isCausedBy rdf:resource="#v9"/>
+  <isCausedBy rdf:resource="#v18"/>
   <isCausedBy rdf:resource="#v15"/>
   <isCausedBy rdf:resource="#v5"/>
-  <isCausedBy rdf:resource="#v18"/>
   <isCausedBy rdf:resource="#v8"/>
   <isCausedBy rdf:resource="#v14"/>
   <isCausedBy rdf:resource="#v4"/>
   <isCausedBy rdf:resource="#v23"/>
+  <isCausedBy rdf:resource="#v13"/>
+  <isCausedBy rdf:resource="#v19"/>
+  <isCausedBy rdf:resource="#v3"/>
   <rdf:type rdf:resource="#CorrelatedAnomaly"/>
   <generate rdf:resource="#datamobileattack1"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738174.804345</hasTime>
-  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738166.14265</startTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805114.68271</hasTime>
+  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805104.842618</startTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </MobileAnomalies>
 
 <NetworkIsDead rdf:about="#networkisdead1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isCausedBy rdf:resource="#v17"/>
-  <isCausedBy rdf:resource="#v12"/>
   <isCausedBy rdf:resource="#v7"/>
   <isCausedBy rdf:resource="#v2"/>
+  <isCausedBy rdf:resource="#v12"/>
   <rdf:type rdf:resource="#CorrelatedAnomaly"/>
   <generate rdf:resource="#terrorism1"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.784869</hasTime>
-  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738165.830741</startTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.257819</hasTime>
+  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805104.342543</startTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </NetworkIsDead>
 
@@ -1240,8 +1252,8 @@
   <isGeneratedBy rdf:resource="#v1"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk1"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738165.175025</hasTime>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasImpact>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805103.364593</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1252,7 +1264,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk2"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738167.676158</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805106.119725</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1263,7 +1275,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk3"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.061585</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.076647</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1274,7 +1286,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk4"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738173.409676</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805113.876449</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1285,7 +1297,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#strategicrisk1"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738174.804345</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805114.68271</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </DataMobileAttack>
@@ -1296,7 +1308,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#terrorismattackrisk1"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.784869</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.257819</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Terrorism>
@@ -1305,8 +1317,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities1"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738165.175025</hasTime>
-  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasRiskValue>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805103.364593</hasTime>
+  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.06</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
 
@@ -1314,7 +1326,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities2"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738167.676158</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805106.119725</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
@@ -1323,7 +1335,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities3"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.061585</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.076647</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
@@ -1332,7 +1344,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities4"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738173.409676</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805113.876449</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.06</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
@@ -1341,7 +1353,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#datamobileattack1"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738174.804345</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805114.68271</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.21</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </StrategicRisk>
@@ -1350,36 +1362,36 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#terrorism1"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738171.784869</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805111.257819</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.016</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </TerrorismAttackRisk>
 
 <Wireless rdf:about="#v25">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#3GAnomaly"/>
+  <rdf:type rdf:resource="#Anomaly"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738175.593674</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805115.670456</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wired rdf:about="#v26">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities5"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738175.896543</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805116.455148</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -1388,8 +1400,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738175.912606</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805116.654509</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -1400,58 +1412,58 @@
 
 <Wireless rdf:about="#v28">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
+  <rdf:type rdf:resource="#Anomaly"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738176.315506</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805116.953257</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v29">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738176.414846</hasTime>
+  <rdf:type rdf:resource="#4GAnomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805117.861861</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
-<Wireless rdf:about="#v30">
+<Wired rdf:about="#v30">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <rdf:type rdf:resource="#3GAnomaly"/>
+  <rdf:type rdf:resource="#BotnetIPRecognized"/>
   <generate rdf:resource="#blacklistthreat3"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738176.965837</hasTime>
-  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805118.527315</hasTime>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BotnetIPRecognized</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
-</Wireless>
+</Wired>
 
 <Wired rdf:about="#v31">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities6"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738177.20022</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805119.412409</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -1460,8 +1472,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738177.969127</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805119.689272</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -1470,59 +1482,59 @@
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wired>
 
-<Wireless rdf:about="#v33">
+<Wired rdf:about="#v33">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#DataDownloaded"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738178.719574</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805120.352819</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
-  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DataDownloaded</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
-</Wireless>
+</Wired>
 
 <Wireless rdf:about="#v34">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738179.320964</hasTime>
+  <rdf:type rdf:resource="#4GAnomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805120.805555</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v35">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#3GAnomaly"/>
+  <rdf:type rdf:resource="#Anomaly"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738179.979287</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805121.226134</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wired rdf:about="#v36">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities7"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738180.07707</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805122.019843</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -1531,8 +1543,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738180.102947</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805122.604502</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -1543,58 +1555,58 @@
 
 <Wireless rdf:about="#v38">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738180.894685</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805123.355476</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wireless rdf:about="#v39">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738181.290322</hasTime>
+  <rdf:type rdf:resource="#4GAnomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805123.874109</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
-<Wireless rdf:about="#v40">
+<Wired rdf:about="#v40">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <rdf:type rdf:resource="#3GAnomaly"/>
+  <rdf:type rdf:resource="#BotnetIPRecognized"/>
   <generate rdf:resource="#blacklistthreat4"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738181.40576</hasTime>
-  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805124.553398</hasTime>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BotnetIPRecognized</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isBlacklist>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
-</Wireless>
+</Wired>
 
 <Wired rdf:about="#v41">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities8"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738182.069263</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805124.645073</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -1603,8 +1615,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738182.244768</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805125.012776</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -1615,57 +1627,57 @@
 
 <Wireless rdf:about="#v43">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738182.465055</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805125.895502</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
-<Wireless rdf:about="#v44">
+<Wired rdf:about="#v44">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#4GAnomaly"/>
+  <rdf:type rdf:resource="#DataDownloaded"/>
   <rdf:type rdf:resource="#Anomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738182.788824</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805126.790195</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
-  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DataDownloaded</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4GAnomaly</isType>
+  <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isWhitelist>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
-</Wireless>
+</Wired>
 
 <Wireless rdf:about="#v45">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#3GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.229039</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805127.136991</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
 
 <Wired rdf:about="#v46">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#MalwareDetected"/>
   <rdf:type rdf:resource="#Anomaly"/>
+  <rdf:type rdf:resource="#MalwareDetected"/>
   <generate rdf:resource="#swvulnerabilities9"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.829918</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805127.982723</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalwareDetected</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isCorrelated>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Wired>
@@ -1674,8 +1686,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#ZeroTraffic"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.914423</hasTime>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.293032</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZeroTraffic</isType>
@@ -1686,14 +1698,14 @@
 
 <Wireless rdf:about="#v48">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <rdf:type rdf:resource="#Anomaly"/>
   <rdf:type rdf:resource="#5GAnomaly"/>
-  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738184.255198</hasTime>
+  <rdf:type rdf:resource="#Anomaly"/>
+  <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasSeverity>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.978681</hasTime>
   <isBlacklist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isBlacklist>
   <isWhitelist rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isWhitelist>
-  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5GAnomaly</isType>
+  <isType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anomaly</isType>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</isProcessed>
   <isCorrelated rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isCorrelated>
 </Wireless>
@@ -1705,7 +1717,7 @@
   <generate rdf:resource="#blacklistrisk3"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasImpact>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738176.965837</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805118.527315</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistThreat>
 
@@ -1714,9 +1726,9 @@
   <isGeneratedBy rdf:resource="#v40"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#blacklistrisk4"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasImpact>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasImpact>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738181.40576</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805124.553398</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistThreat>
 
@@ -1725,7 +1737,7 @@
   <isGeneratedBy rdf:resource="#blacklistthreat3"/>
   <rdf:type rdf:resource="#Risk"/>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</hasRiskValue>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738176.965837</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805118.527315</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistRisk>
 
@@ -1734,27 +1746,27 @@
   <isGeneratedBy rdf:resource="#blacklistthreat4"/>
   <rdf:type rdf:resource="#Risk"/>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</hasRiskValue>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738181.40576</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805124.553398</hasTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </BlacklistRisk>
 
 <MobileAnomalies rdf:about="#mobileanomalies2">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isCausedBy rdf:resource="#v48"/>
+  <isCausedBy rdf:resource="#v34"/>
+  <isCausedBy rdf:resource="#v43"/>
   <isCausedBy rdf:resource="#v39"/>
   <isCausedBy rdf:resource="#v45"/>
   <isCausedBy rdf:resource="#v29"/>
-  <isCausedBy rdf:resource="#v38"/>
   <isCausedBy rdf:resource="#v35"/>
   <isCausedBy rdf:resource="#v25"/>
+  <isCausedBy rdf:resource="#v38"/>
   <isCausedBy rdf:resource="#v28"/>
-  <isCausedBy rdf:resource="#v34"/>
-  <isCausedBy rdf:resource="#v43"/>
   <rdf:type rdf:resource="#CorrelatedAnomaly"/>
   <generate rdf:resource="#datamobileattack2"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738184.255198</hasTime>
-  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738175.593674</startTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.978681</hasTime>
+  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805115.670456</startTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </MobileAnomalies>
 
@@ -1768,8 +1780,8 @@
   <rdf:type rdf:resource="#CorrelatedAnomaly"/>
   <generate rdf:resource="#terrorism2"/>
   <hasSeverity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasSeverity>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.914423</hasTime>
-  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738175.912606</startTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.293032</hasTime>
+  <startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805116.654509</startTime>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </NetworkIsDead>
 
@@ -1778,8 +1790,8 @@
   <isGeneratedBy rdf:resource="#v26"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk5"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738175.896543</hasTime>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasImpact>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805116.455148</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1789,8 +1801,8 @@
   <isGeneratedBy rdf:resource="#v31"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk6"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738177.20022</hasTime>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasImpact>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805119.412409</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1800,8 +1812,8 @@
   <isGeneratedBy rdf:resource="#v36"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk7"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738180.07707</hasTime>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasImpact>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805122.019843</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1812,7 +1824,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk8"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738182.069263</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805124.645073</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1822,8 +1834,8 @@
   <isGeneratedBy rdf:resource="#v46"/>
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#swmaintenanceerrorrisk9"/>
-  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.829918</hasTime>
+  <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasImpact>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805127.982723</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWVulnerabilities>
@@ -1834,7 +1846,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#strategicrisk2"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738184.255198</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.978681</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </DataMobileAttack>
@@ -1845,7 +1857,7 @@
   <rdf:type rdf:resource="#Threat"/>
   <generate rdf:resource="#terrorismattackrisk2"/>
   <hasImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasImpact>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.914423</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.293032</hasTime>
   <hasProbability rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasProbability>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </Terrorism>
@@ -1854,8 +1866,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities5"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738175.896543</hasTime>
-  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</hasRiskValue>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805116.455148</hasTime>
+  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.02</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
 
@@ -1863,8 +1875,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities6"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738177.20022</hasTime>
-  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.02</hasRiskValue>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805119.412409</hasTime>
+  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
 
@@ -1872,8 +1884,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities7"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738180.07707</hasTime>
-  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.06</hasRiskValue>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805122.019843</hasTime>
+  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
 
@@ -1881,7 +1893,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities8"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738182.069263</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805124.645073</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.06</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
@@ -1890,8 +1902,8 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#swvulnerabilities9"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.829918</hasTime>
-  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.06</hasRiskValue>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805127.982723</hasTime>
+  <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </SWMaintenanceErrorRisk>
 
@@ -1899,7 +1911,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#datamobileattack2"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738184.255198</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.978681</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.21</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </StrategicRisk>
@@ -1908,7 +1920,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <isGeneratedBy rdf:resource="#terrorism2"/>
   <rdf:type rdf:resource="#Risk"/>
-  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673738183.914423</hasTime>
+  <hasTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1673805128.293032</hasTime>
   <hasRiskValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.016</hasRiskValue>
   <isProcessed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</isProcessed>
 </TerrorismAttackRisk>

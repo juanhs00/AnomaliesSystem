@@ -28,6 +28,15 @@ with open('lists/wireless.txt','r') as f:
         file = csv.reader(f)
         wireless=list(file)
 
+with open('lists/blacklist.txt','r') as f:
+        file = csv.reader(f)
+        blacklist=list(file)
+
+with open('lists/whitelist.txt','r') as f:
+        file = csv.reader(f)
+        whitelist=list(file)
+
+
 def TypeRule():
     with onto:    
         #Añadimos las anomalías a una subclase en función de su tipo
@@ -41,6 +50,8 @@ def TypeRule():
                         ?w o:isType '%s'}
             """ % (key[0],key[0])
             default_world.sparql(subtype)
+         
+            print(subtype)
 
         for key in wireless:
             subtype="""
@@ -56,17 +67,35 @@ def TypeRule():
     onto.save(file = pathFile, format = "rdfxml")
 
 def BlacklistProcess():
-        
+                for key in blacklist:
+                        with onto:
+                                default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        DELETE {
+                                                ?a o:isBlacklist 0.
+                                        }
+                                        INSERT {
+                                                ?a o:isBlacklist 1.
+                                        }
+                                        WHERE { ?a a o:%s.
+                                                ?a o:isBlacklist 0.
+                                                ?a o:isProcessed 0.
+                                        }"""% (key[0]))
+
+                onto.save(file = pathFile, format = "rdfxml")
+
                 with onto:                    
                         blackAnomaly = list(default_world.sparql("""
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
 
-                                SELECT ?a ?ti
-                                WHERE { ?a a o:Anomaly
-                                        ?a o:hasTime ?ti
-                                        ?a o:isBlacklist 1
+                                SELECT ?a ?ti ?ty
+                                WHERE { ?a a ?ty.
+                                        ?a o:hasTime ?ti.
+                                        ?a o:isBlacklist 0.
                                         ?a o:isProcessed 0.
+                                        ?a a o:Anomaly.
                                 }"""))
+
                         
                 path=pathlib.Path().absolute()
                 filepath= str(path) + '/logs/blacklistAnomaliesLog.txt'
@@ -81,8 +110,8 @@ def BlacklistProcess():
                                 PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
                                 INSERT {
                                         ?t o:isGeneratedBy ?a.
-                                        ?t o:hasImpact ?s.
-                                        ?t o:hasProbability 20.
+                                        ?t o:hasImpact 9.
+                                        ?t o:hasProbability 40.
                                         ?t o:hasTime ?ti.
                                         ?a o:generate ?t.
                                         ?t o:isProcessed 0.
@@ -150,7 +179,7 @@ def BlacklistProcess():
                                 INSERT {
                                         ?t o:generate ?r.
                                         ?r o:isGeneratedBy ?t.
-                                        ?r o:hasRiskValue 0.2.
+                                        ?r o:hasRiskValue 0.45.
                                         ?r o:hasTime ?ti.
                                         ?r o:isProcessed 0.
                                         }
@@ -218,6 +247,23 @@ def BlacklistProcess():
                 onto.save(file = pathFile, format = "rdfxml")
 
 def WhitelistProcess():
+                for key in whitelist:
+                        with onto:
+                                default_world.sparql("""
+                                        PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
+                                        DELETE {
+                                                ?a o:isWhitelist 0.
+                                        }
+                                        INSERT {
+                                                ?a o:isWhitelist 1.
+                                        }
+                                        WHERE { ?a a o:%s.
+                                                ?a o:isWhitelist 0.
+                                                ?a o:isProcessed 0.
+                                        }"""% (key[0]))
+
+                onto.save(file = pathFile, format = "rdfxml")
+
                 with onto:
                         default_world.sparql("""
                         PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>

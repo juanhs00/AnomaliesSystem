@@ -1,0 +1,7 @@
+BotnetIPRecognized
+NotExternalTraffic
+NotInternalTraffic
+IllegalBehaviorDetected
+CibersecurityDeviceError
+ConnectionLostWithAnyHeadquarters
+IPRangeFromNorthKorea

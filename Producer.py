@@ -4,6 +4,7 @@ import random
 import time
 import json
 import csv
+import sys
 
 #Este fichero produce un flujo continuo de anomalías con propiedades aleatorias
 #IMPORTANTE: Activar servidor Kafka introduciendo los siguientes comandos en dos terminales
@@ -11,10 +12,16 @@ import csv
 #/rutaAServerKafka/bin/kafka-server-start.sh config/server.properties
 
 validation = True
-producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
+try:
+    producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
+except Exception:
+    print('Apache Kafka no está iniciado')
+    sys.exit()
 
 correlated = 0
 processed = 0
+whitelist = 0
+blacklist = 0
 
 with open('lists/wired.txt','r') as f:
     file = csv.reader(f)
@@ -32,10 +39,6 @@ if not(validation):
 
     while True:
         subtype = 'Anomaly'
-        whitelist = 0
-        blacklist = 0
-        blist = random.randint (0,100)
-        wlist = random.randint (100,150)
         delay = random.uniform(0, 1)
         time.sleep(delay)
         name = 'a' + str(count)
@@ -43,10 +46,6 @@ if not(validation):
         severity = severity[0]
         now = datetime.now()
         stamp =  datetime.timestamp(now)
-        if wlist == 50 & blist!=125:
-            whitelist = 1
-        if blist == 125:
-            blacklist = 1
         type = random.choices(types, weights=(75,25), k=1)
         type = type[0]
         if type == 'Wired':
@@ -66,16 +65,12 @@ if validation:
     index = 1
     delay = 0.1
     types = ['MalwareDetected', 'ZeroTraffic','5GAnomaly','4GAnomaly','3GAnomaly']
+    typeBlacklist = 'BotnetIPRecognized'
+    typeWhitelist = 'DataDownloaded'
     severities = [0,1,2,3,4,5,6,7,8,9,10]
 
     while count<51:
         subtype = 'Anomaly'
-        whitelist = 0
-        blacklist = 0
-        if count%10== 0:
-            blacklist =1
-        if (count%11 == 0 & count!=90):
-            whitelist = 1
         if index == (len(types)+1):
             index = 1
         delay = random.uniform(0, 1)
@@ -90,6 +85,12 @@ if validation:
             type = 'Wired'
         else:
             type = 'Wireless'
+        if count%10== 0:
+            type = 'Wired'
+            subtype = typeBlacklist
+        if (count%11 == 0 & count!=90):
+            type = 'Wired'
+            subtype = typeWhitelist
         index = index +1
         count  = count + 1
 

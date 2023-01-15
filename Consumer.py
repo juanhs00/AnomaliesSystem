@@ -83,8 +83,15 @@ with onto:
         pass
 
 CreateLogs()
-admin = KafkaAdminClient(bootstrap_servers=['localhost:9092'])
-admin.delete_topics(['quickstart-events'])
+try:
+    admin = KafkaAdminClient(bootstrap_servers=['localhost:9092'])
+except Exception:
+    print('Apache Kafka no está iniciado')
+    sys.exit()
+try:
+    admin.delete_topics(['quickstart-events'])
+except Exception:
+    pass
 consumer = KafkaConsumer(bootstrap_servers=['localhost:9092'], auto_offset_reset='earliest')
 consumer.subscribe(['quickstart-events'])
 
