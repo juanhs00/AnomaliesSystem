@@ -74,7 +74,7 @@ def ApplyRules():
     ThreatToRiskRule('NaturalDisasters','NaturalDisasterRisk')
     ThreatToRiskRule('SocialEngineering','DataProtectionComplianceRisk')
     ThreatToRiskRule('DeviceTheft','DataProtectionComplianceRisk')
-    ThreatToRiskRule('DeviceLost','Quality&ProcessRisk')
+    ThreatToRiskRule('DeviceLost','QualityAndProcessRisk')
     ThreatToRiskRule('NonIntentionalInformationLeak','SWMaintenanceErrorRisk')
     ThreatToRiskRule('PrivilegeEscalation','SWMaintenanceErrorRisk')
     ThreatToRiskRule('PrivilegeEscalation','InformationSecurityRisk')

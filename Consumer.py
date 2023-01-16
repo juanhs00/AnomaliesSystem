@@ -25,7 +25,7 @@ def CreateLogs():
         path=pathlib.Path().absolute()
         filepath= str(path) + '/logs/blacklistAnomaliesLog.txt'
         file = open(filepath, "w")
-        file.write('Anomaly, Time' + os.linesep)
+        file.write('Anomaly, Time, Type' + os.linesep)
         file.close()
 
         path=pathlib.Path().absolute()

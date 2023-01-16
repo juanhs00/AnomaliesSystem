@@ -442,7 +442,7 @@ def AnomalyToThreatRule(anomalyType,threatType):
                                         """ % (anomalyType)))
                                 
                 for key in impactProcess:
-                        realImpact=int(float(key[1])/10*float(threatImpact))
+                        realImpact=max(int(key[1]),int(threatImpact))
                         with onto:
                                 default_world.sparql("""
                                                         PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>
@@ -528,7 +528,7 @@ def CorrelatedToThreatRule(correlatedType,threatType):
                                         """ % (correlatedType)))
                                 
                 for key in impactProcess:
-                        realImpact=int(float(key[1])/10*float(threatImpact))
+                        realImpact=max(int(key[1]),int(threatImpact))
                         with onto:
                                 default_world.sparql("""
                                                         PREFIX o: <http://www.ontologies.com/ontologies/System.owl#>

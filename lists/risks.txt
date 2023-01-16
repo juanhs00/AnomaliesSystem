@@ -42,7 +42,7 @@ NonIntentionalUserErrorRisk
 PhysicalRisk
 BadReputationRisk
 DeliberatedConfigFilesTamperingRisk
-Quality&ProcessRisk
+QualityAndProcessRisk
 DeviceLostRisk
 HWMaintenanceErrorRisk
 MonitoringErrorRisk
